@@ -14,5 +14,6 @@ sudo pacman -Syyu
 ## 安装podman
 ```
 sudo pacman -Sy podman
-podman pull docker.io/archlinux  
+sudo podman pull docker.io/archlinux  
+sudo podman run -itd --restart=always --name alpha -p 5901:5901 --hostname kpzhao --mac-address 94:65:2d:34:9d:d6 --privileged archlinux
 ```
