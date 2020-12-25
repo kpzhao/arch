@@ -10,6 +10,12 @@
 Server = https://mirrors.ustc.edu.cn/archlinux/$repo/os/$arch  
 sudo pacman -Syyu
 ```
+## 添加新用户
+```
+useradd -m -G wheel -s /bin/bash kain  
+passwd kain  
+vim /etc/sudoers
+```
 
 ## 安装podman
 ```
