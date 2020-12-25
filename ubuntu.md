@@ -1,4 +1,9 @@
 # ubuntu
+## 换源（科大
+```
+sudo sed -i 's/archive.ubuntu.com/mirrors.ustc.edu.cn/g' /etc/apt/sources.list  
+sudo apt-get update
+```
 ## podman
 ### Add the Podman PPA and install Podman
 ```
