@@ -16,28 +16,29 @@ sudo pacman -Syyu
 sudo pacman -Sy podman
 ```
 
-Rootless configuration file changes
+# Rootless configuration file changes
 If you plan to run podman as a non-root user, you should start with a simple podman command like:
 
-$ podman info 
+  podman info  
 This action will create the Podman configuration file $HOME/.config/containers/libpod.conf. Simply edit this file and change the value of events_logger to <file>.
 
 Rootfull configuration file changes
 If you wish to run podman as a privileged user, you should first copy the Podman configuration file to /etc/containers/.
 
-$ sudo cp /usr/share/containers/libpod.conf /etc/containers
+  sudo cp /usr/share/containers/libpod.conf /etc/containers
 Now, edit the version in /etc/containers and change the value of cgroup_manager to cgroupfs. Then, uncomment the line for the events_logger key and change the value to <file>.
 
 The following is a simple diff of the changes:
-
+``` diff
 27c27
-< cgroup_manager = "systemd"
+- cgroup_manager = "systemd"
 ---
-> cgroup_manager = "cgroupfs"
++ cgroup_manager = "cgroupfs"
 109c109
-< # events_logger = "journald"
+- # events_logger = "journald"
 ---
-> events_logger = "file
++ events_logger = "file
+```
 
 ### 配置镜像源
 修改`/etc/containers/registries.conf`  
