@@ -16,6 +16,11 @@ useradd -m -G wheel -s /bin/bash kain
 passwd kain  
 vim /etc/sudoers
 ```
+## 安装xfce4
+```
+sudo pacman -Sy xorg xfce4
+startxfce4
+```
 
 ## 安装podman
 ```
