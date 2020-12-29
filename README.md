@@ -3,7 +3,10 @@
 ### 123
 #### 123
 ##### 123
-
+## 网络
+```
+dhcpcd  
+```
 ## 换源
 编辑 `/etc/pacman.d/mirrorlist` ，在文件的最顶端添加  
 ```
@@ -18,7 +21,7 @@ vim /etc/sudoers
 ```
 ## 安装xfce4
 ```
-sudo pacman -Sy xorg xfce4
+sudo pacman -Sy xorg xfce4  
 startxfce4
 ```
 
