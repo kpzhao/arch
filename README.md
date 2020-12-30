@@ -31,6 +31,21 @@ git clone https://aur.archlinux.org/yay.git
 cd yay
 makepkg -si
 ```
+## 安装archlinuxcn源
+在/etc/pacman.conf中添加archlinuxcn的源  
+```
+[archlinuxcn]  
+SigLevel = Optional TrustAll  
+Server = https://mirrors.tuna.tsinghua.edu.cn/archlinuxcn/$arch  
+```
+安装密钥包
+```
+pacman -S archlinuxcn-keyring  
+```
+更新软件库
+```
+pacman -Sy
+```
 ## 安装xfce4
 ```
 sudo pacman -Sy xorg xfce4  
