@@ -19,6 +19,11 @@ useradd -m -G wheel -s /bin/bash kp
 passwd kp  
 vim /etc/sudoers
 ```
+## 设置zsh为默认的shell
+```
+sudo pacman -Sy zsh
+sudo chsh -s /bin/zsh username  
+```
 
 ## 安装aur（不能在root用户下  
 ```
