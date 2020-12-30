@@ -34,8 +34,7 @@ makepkg -si
 ## 安装archlinuxcn源
 在/etc/pacman.conf中添加archlinuxcn的源  
 ```
-[archlinuxcn]  
-SigLevel = Optional TrustAll  
+[archlinuxcn]    
 Server = https://mirrors.tuna.tsinghua.edu.cn/archlinuxcn/$arch  
 ```
 安装密钥包
