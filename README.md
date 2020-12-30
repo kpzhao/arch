@@ -45,6 +45,10 @@ pacman -S archlinuxcn-keyring
 ```
 pacman -Sy
 ```
+## 安装中文字体
+```
+pacman -S ttf-dejavu wqy-microhei
+```
 ## 安装xfce4
 ```
 sudo pacman -Sy xorg xfce4  
