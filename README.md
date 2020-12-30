@@ -19,6 +19,13 @@ useradd -m -G wheel -s /bin/bash kain
 passwd kain  
 vim /etc/sudoers
 ```
+
+## 安装aur（不能在root用户下  
+```
+git clone https://aur.archlinux.org/yay.git
+cd yay
+makepkg -si
+```
 ## 安装xfce4
 ```
 sudo pacman -Sy xorg xfce4  
