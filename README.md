@@ -15,8 +15,8 @@ sudo pacman -Syyu
 ```
 ## 添加新用户
 ```
-useradd -m -G wheel -s /bin/bash kain  
-passwd kain  
+useradd -m -G wheel -s /bin/bash kp  
+passwd kp  
 vim /etc/sudoers
 ```
 
