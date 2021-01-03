@@ -114,6 +114,15 @@ location = "registry.docker-cn.com"
 sudo podman pull docker.io/archlinux  
 sudo podman run -itd --restart=always --name alpha -p 5901:5901 --hostname kpzhao --mac-address 94:65:2d:34:9d:d6 --privileged archlinux
 ```
+### Initialize keyring
+
+Please excute these commands to initialize the keyring.
+(This step is necessary to use pacman.)
+
+```shell
+sudo pacman-key --init
+sudo pacman-key --populate
+```
 ## vnc+xfce4
 ```
 sudo pacman -Sy xfce4 tigervnc
