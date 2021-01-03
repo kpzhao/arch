@@ -19,6 +19,10 @@ useradd -m -G wheel -s /bin/bash kp
 passwd kp  
 vim /etc/sudoers
 ```
+或者
+先把系统默认编辑器设置成 vim `export EDITOR=vim`  
+然后编辑`visudo` 
+添加一行`kp ALL=(ALL) ALL`
 ## 设置zsh为默认的shell
 ```
 sudo pacman -Sy zsh
