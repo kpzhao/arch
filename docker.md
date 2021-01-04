@@ -10,5 +10,5 @@ podman build --format=docker -t arch .
 ```
 启动
 ```
-podman run -d --name=mysysd_run -p 80:80 mysysd
+podman run -d --name=arch -p 80:80 arch
 ```
