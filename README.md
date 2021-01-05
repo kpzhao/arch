@@ -106,7 +106,9 @@ unqualified-search-registries = ["docker.io"]
 prefix = "docker.io"
 insecure = false
 blocked = false
-location = "docker.io"
+location = "docker.io"  
+[[registry.mirror]]
+location = "2t36clkd.mirror.aliyuncs.com"
 [[registry.mirror]]
 location = "hub-mirror.c.163.com"
 [[registry.mirror]]
