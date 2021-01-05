@@ -54,7 +54,8 @@ pacman -Sy
 vim /etc/locale.gen  
 去掉这四行前面的 # 号`zh_CN.UTF-8 UTF-8` `zh_HK.UTF-8 UTF-8` `zh_TW.UTF-8 UTF-8` `en_US.UTF-8 UTF-8`  
 vim /etc/locale.conf  
-第一行设置为`LANG=en_US.UTF-8`
+第一行设置为 LANG=en_US.UTF-8  
+echo "LANG=en_US.UTF-8" >> /etc/locale.conf
 ```
 ## 安装中文字体
 ```
