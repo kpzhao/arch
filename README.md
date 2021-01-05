@@ -140,6 +140,15 @@ Please excute these commands to initialize the keyring.
 sudo pacman-key --init
 sudo pacman-key --populate
 ```
+
+### 安装 open-vm-tools
+安装 open-vm-tools 和 gtkmm3：
+`yay -S open-vm-tools gtkmm3`
+设置 open-vm-tools 开机自启：
+```
+sudo systemctl enable vmtoolsd.service
+sudo systemctl enable vmware-vmblock-fuse.service
+```
 ## vnc+xfce4
 ```
 sudo pacman -Sy xfce4 tigervnc
