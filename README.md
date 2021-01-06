@@ -84,7 +84,7 @@ If you wish to run podman as a privileged user, you should first copy the Podman
   sudo cp /usr/share/containers/libpod.conf /etc/containers
 Now, edit the version in /etc/containers and change the value of cgroup_manager to cgroupfs. Then, uncomment the line for the events_logger key and change the value to <file>.
 
-`vim /etc/containers/containers.conf`
+`sudo vim /etc/containers/containers.conf`
 The following is a simple diff of the changes:
 ``` diff
 27c27
