@@ -154,5 +154,17 @@ sudo systemctl enable vmware-vmblock-fuse.service
 ## vnc+xfce4
 ```
 sudo pacman -Sy xfce4 tigervnc
-vncserver :1
+vncpasswd
+/etc/tigervnc/vncserver.users
+```
+新建~/.vnc/config
+```
+session=lxqt
+geometry=1920x1080
+localhost
+alwaysshared
+```
+
+```
+systemctl start vncserver@:1
 ```
