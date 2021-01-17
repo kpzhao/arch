@@ -160,7 +160,7 @@ vncpasswd
 新建~/.vnc/config
 ```
 session=lxqt
-geometry=1920x1080
+geometry=2736x1824
 localhost
 alwaysshared
 ```
