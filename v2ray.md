@@ -5,7 +5,8 @@ podman run -d --name v2ray --privileged --restart always --network host jrohy/v2
 
 自定义v2ray配置文件:
 ```
-podman run -d --name v2ray --privileged -v /path/config.json:/etc/v2ray/config.json --restart always --network host jrohy/v2ray
+git clone https://github.com/kpzhao/v2ray.git 至root文件夹下
+podman run -d --name v2ray --privileged -v /root/v2ray/config.json:/etc/v2ray/config.json --restart always --network host jrohy/v2ray
 ```
 
 查看v2ray配置:
