@@ -10,7 +10,7 @@ podman run -d --name v2ray --privileged -v /path/config.json:/etc/v2ray/config.j
 
 查看v2ray配置:
 ```
-docker exec v2ray bash -c "v2ray info"
+podman exec v2ray bash -c "v2ray info"
 ```
 
 **warning**: 如果用centos，需要先关闭防火墙
