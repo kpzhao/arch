@@ -43,7 +43,7 @@ Server = https://mirrors.ustc.edu.cn/archlinuxcn/$arch
 ```
 安装密钥包
 ```
-pacman -S archlinuxcn-keyring  
+pacman -Sy archlinuxcn-keyring  
 ```
 更新软件库
 ```
