@@ -31,6 +31,7 @@ sudo chsh -s /bin/zsh username
 
 ## 安装aur（不能在root用户下  
 ```
+sudo pacman -S --needed base-devel git
 git clone https://aur.archlinux.org/yay.git
 cd yay
 makepkg -si
