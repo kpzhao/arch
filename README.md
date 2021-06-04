@@ -20,7 +20,7 @@ passwd kp
 vim /etc/sudoers
 ```
 或者
-先把系统默认编辑器设置成 vim `export EDITOR=vim`  
+先把系统默认编辑器设置成 vim `export EDITOR=vim` 或者 `ln -s /usr/bin/vim /usr/bin/vi` 
 然后编辑`visudo` 
 添加一行`kp ALL=(ALL) ALL`
 ## 设置zsh为默认的shell
