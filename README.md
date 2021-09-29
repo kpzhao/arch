@@ -16,7 +16,7 @@ sudo pacman -Syyu
 ## 添加新用户
 ```
 useradd -m -G wheel -s /bin/bash kpzhao  
-passwd kp (666999) 
+passwd kpzhao (666999) 
 vim /etc/sudoers
 ```
 或者
