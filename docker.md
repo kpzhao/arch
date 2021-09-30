@@ -7,16 +7,16 @@ CMD [ "/sbin/init" ]
 ```
 构建
 ```
-podman build --format=docker -t arch .
+docker build --format=docker -t arch .
 ```
 启动
 ```
-podman run -d --name=arch -p 80:80 arch
+docker run -d --name=arch -p 80:80 arch
 ```
 
 ## aria2
 ```
-podman  run -d \
+docker  run -d \
     --name aria2-pro \
     --restart unless-stopped \
     --log-opt max-size=1m \
@@ -33,6 +33,6 @@ podman  run -d \
 
 ## arch
 ```
-sudo podman pull docker.io/archlinux  
-sudo podman run -itd --restart=always --name alpha -p 5901:5901 --hostname kpzhao --mac-address 94:65:2d:34:9d:d6  archlinux
+sudo docker pull docker.io/archlinux  
+sudo docker run -itd --restart=always --name alpha -p 5901:5901 --hostname kpzhao --mac-address 94:65:2d:34:9d:d6  archlinux
 ```
