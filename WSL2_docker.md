@@ -1,4 +1,4 @@
 ## 启动dockerd
 ```
-nohup dockerd &
+sudo nohup dockerd &
 ```
