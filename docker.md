@@ -15,8 +15,9 @@ docker run -d --name=arch -p 80:80 arch
 ```
 
 ## aria2
+### 后端
 ```
-docker  run -d \
+sudo docker  run -d \
     --name aria2-pro \
     --restart unless-stopped \
     --log-opt max-size=1m \
@@ -29,6 +30,15 @@ docker  run -d \
     -v /mnt/c/aria2/aria2-config:/config \
     -v /mnt/c/aria2/aria2-downloads:/downloads \
     docker.io/p3terx/aria2-pro
+```
+### 前端
+```
+sudo docker run -d \
+    --name ariang \
+    --log-opt max-size=1m \
+    --restart unless-stopped \
+    --network host \
+    p3terx/ariang --port 6880
 ```
 
 ## arch
