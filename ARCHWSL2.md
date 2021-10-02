@@ -1,5 +1,96 @@
-# 安装ARCHWSL2
+## 安装 ARCHWSL2
 在[yuk7/ArchWSL - releases](https://github.com/yuk7/ArchWSL/releases/tag/21.8.28.0)下载`Arch.zip`，解压，双击`Arch.exe`进行安装。详见[yuk7/ArchWSL - Wiki](https://github.com/yuk7/ArchWSL)
+## 换源更新
+```
+passwd # 设置密码
+# 设置软件源
+echo 'Server = https://mirrors.ustc.edu.cn/archlinux/$repo/os/$arch' >> /etc/pacman.d/mirrorlist
+echo 'Server = https://mirrors.tuna.tsinghua.edu.cn/archlinux/$repo/os/$arch' >> /etc/pacman.d/mirrorlist
+# 添加写保护，防止被修改
+chattr +i /etc/pacman.d/mirrorlist
+# 初始化 keyring
+pacman-key --init
+pacman-key --populate
+pacman -Syu # 更新
+```
+## 启用 multilib 库
+multilib 库包含 64 位系统中需要的 32 位软件和库
+`vim /etc/pacman.conf`，取消这几行的注释：
+```
+[multilib]
+Include = /etc/pacman.d/mirrorlist
+```
+并且取消该文件中`#Color`这一行的注释，以启用彩色输出
+## 添加 archlinuxcn 源
+Arch Linux 中文社区仓库 是由 Arch Linux 中文社区驱动的非官方用户仓库。
+`vim /etc/pacman.conf`
+在文件末尾加上：
+```
+[archlinuxcn]    
+Server = https://mirrors.ustc.edu.cn/archlinuxcn/$arch  
+```
+然后：
+```
+pacman -Syy
+pacman -S archlinuxcn-keyring
+```
+## 创建用户
+```
+useradd -m -G wheel -s /bin/bash kpzhao  
+passwd kpzhao (666999) 
+```
+加入sudo组
+```
+ln -s /usr/bin/vim /usr/bin/vi
+vim /etc/sudoers
+```
+将以下两行行首的#去掉
+```
+# %wheel ALL=(ALL) ALL
+# %wheel ALL=(ALL) NOPASSWD: ALL
+```
+在 powershell 中进入到 Arch.exe 所在文件夹，设置 WSL 默认登陆用户和默认的 WSL：
+```
+.\Arch.exe config --default-user kpzhao
+wsl -s Arch
+```
+## 安装 yay （以下非root用户）
+```
+sudo pacman -S --needed base-devel
+```
+出现`:: fakeroot is in IgnorePkg/IgnoreGroup. Install anyway? [Y/n]`，选 n，接下来一直回车即可。
+```
+sudo pacman -S --needed yay
+````
+### yay 换源
+```
+yay --aururl "https://aur.tuna.tsinghua.edu.cn" --save
+````
+## 安装其他的一些软件
+```
+sudo pacman -S --needed neofetch lolcat bat tokei tree screenfetch
+neofetch | lolcat -a
+```
+## 安装 zsh
+```
+sudo pacman -S --needed zsh
+# 编辑 /etc/passwd 文件，将 root 用户和 yourname 用户的 /bin/bash 改为 /bin/zsh
+# 或者使用 chsh -s /bin/zsh 来改变当前用户的默认shell
+sudo vim /etc/passwd
+touch ~/.zshrc
+# 在yourname用户创建软链接，让root用户也使用yourname用户的.zshrc
+# 我觉得这样比较方便
+sudo ln -s ~/.zshrc /root/.zshrc
+```
+## 使用 proxychains 代理终端程序
+## systemd
+
+
+
+
+
+
+
 ## clash 代理
 
 ```
