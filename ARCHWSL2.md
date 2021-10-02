@@ -84,6 +84,17 @@ sudo ln -s ~/.zshrc /root/.zshrc
 ```
 ## 使用 proxychains 代理终端程序
 ## systemd
+## WSL2 内存占用过高
+新建文件C:\Users\用户名\.wslconfig
+```
+[wsl2]
+memory=2GB
+swap=0
+localhostForwarding=true
+```
+## Tips
+从文件资源管理器`\\wsl$`访问
+
 
 
 
