@@ -84,6 +84,20 @@ sudo ln -s ~/.zshrc /root/.zshrc
 ```
 ## 使用 proxychains 代理终端程序
 ## systemd
+安装 daemonize
+```
+yay -S daemonize
+```
+下载[genie-systemd-1.44-1-x86_64.pkg.tar.zst](https://github.com/arkane-systems/genie/releases/download/v1.44/genie-systemd-1.44-1-x86_64.pkg.tar.zst)，并安装
+```
+sudo pacman -U genie-systemd-1.44-1-x86_64.pkg.tar.zst
+```
+运行 genie -i，让ArchWSL可以正常使用systemd
+```
+genie -i
+```
+
+
 ## WSL2 内存占用过高
 新建文件C:\Users\用户名\.wslconfig
 ```
