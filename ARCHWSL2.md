@@ -132,7 +132,7 @@ vim /etc/tigervnc/vncserver.users #添加用户
 ```
 新建`vim ~/.vnc/config`，内容为
 ```
-session=xfce4
+session=xfce4 #或者换成kde
 geometry=2736x1824
 localhost
 alwaysshared
