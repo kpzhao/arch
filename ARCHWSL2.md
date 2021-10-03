@@ -4,7 +4,7 @@
 ```
 passwd # 设置密码
 # 设置软件源
-echo 'Server = https://mirrors.ustc.edu.cn/archlinux/$repo/os/$arch' >> /etc/pacman.d/mirrorlist
+echo 'Server = https://mirrors.ustc.edu.cn/archlinux/$repo/os/$arch' > /etc/pacman.d/mirrorlist
 echo 'Server = https://mirrors.tuna.tsinghua.edu.cn/archlinux/$repo/os/$arch' >> /etc/pacman.d/mirrorlist
 # 添加写保护，防止被修改
 chattr +i /etc/pacman.d/mirrorlist
