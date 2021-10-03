@@ -104,6 +104,8 @@ sudo pacman -S --needed xfce4 xfce4-goodies dbus dbus-glib
 ```
 ### kde
 ```
+pacman -S plasma-meta konsole dolphin #安装plasma-meta元软件包以及终端和文件管理器
+systemctl enable sddm #配置sddm
 ```
 
 ## 安装中文字体
