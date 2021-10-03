@@ -42,7 +42,7 @@ passwd kpzhao (666999)
 加入sudo组
 ```
 ln -s /usr/bin/vim /usr/bin/vi
-vim /etc/sudoers
+visudo
 ```
 将以下两行行首的#去掉
 ```
