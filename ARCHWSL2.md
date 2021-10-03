@@ -97,7 +97,45 @@ sudo pacman -U genie-systemd-1.44-1-x86_64.pkg.tar.zst
 ```
 genie -i
 ```
+## 安装xfce4/kde
+### xfce4
+```
+sudo pacman -S --needed xfce4 xfce4-goodies dbus dbus-glib
+```
+### kde
+```
+```
 
+## 安装中文字体
+```
+sudo pacman -S wqy-microhei
+```
+`sudo vim /etc/locale.gen`，取消下面两行的注释：
+```
+en_US.UTF-8 UTF-8
+zh_CN.UTF-8 UTF-8
+```
+然后`sudo locale-gen`初始化语言环境
+```
+vim /etc/locale.conf  
+第一行设置为 LANG=en_US.UTF-8  
+echo "LANG=en_US.UTF-8" >> /etc/locale.conf
+```
+
+## 安装 tigervnc
+```
+sudo pacman -Sy tigervnc
+vncpasswd #设置密码
+vim /etc/tigervnc/vncserver.users #添加用户
+```
+新建`vim ~/.vnc/config`，内容为
+```
+session=xfce4
+geometry=2736x1824
+localhost
+alwaysshared
+```
+启动`systemctl start vncserver@:1`
 
 ## WSL2 内存占用过高
 新建文件C:\Users\用户名\.wslconfig
