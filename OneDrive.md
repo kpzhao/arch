@@ -9,6 +9,12 @@ KW3m8ZV-v6xRU.jK_mTdq-~_~S1Dp0L_0-
 ```
 
 ## sharelist
+### docker安装
+详情见[reruin/sharelist](https://github.com/reruin/sharelist)
+```
+docker run -d -v /etc/sharelist:/sharelist/cache -p 33001:33001 --name="sharelist" reruin/sharelist:next
+```
+打开`ip:33001`进行挂载
 ```
 client_id:34ce4edc-9256-4d19-bd3e-d3ab92a18c13
 
