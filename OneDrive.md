@@ -10,13 +10,11 @@ redirect_uri:https://localhost:53682/
 code 0.AT4A9an29eFETkC6rBWE-0B4GXW0ZLyfZRZHiNUZjCZ786Q-ANg.AQABAAIAAAD--DLA3VO7QrddgJg7Wevrepb0TPPAgbZnhNMUg9QcO4CMY3idoHliG7SSXgqH9eNlWB9StxTlunIAev9i5wWQch9Z3Hbo5kJ-o-z03bcosis0h5niUt1kY8L_wszlzMLvdb77Z9rKlBx-oNPXnHXNbOEfcrNYE2-qed8ugaA79BeI4k_S3LYfdF80NSuaspgwo7VaIQ0t3uBjxRySvIs2P0_1SvPlSFSyXjHejF1vcLst8kb2RjJvJFATj7-ghGglRKczDUQCexNnTSKCTVo6v__ZqxXNRXt1o4h6dLRR4h6hW48SUq_kL7fY-l1tzc20-tl-wQopoVrJDzTSIhA6joPbfy-6rPDonVgNFSmGVtn9erjc24xreKm2CTYcsvAIhI_n4GTiqjBX29bCMCFavtEMe2qURsGNy8eWJEZE8ZETaoB93bgElMw5lLRxdP1zj5gmPc8Rvb48tUy7_x_3I8jQ070-Nvjnsehmin9GNfi96LGtoTDrfu7tOf6iWgFotZ2nELWtyIdxODM42exSuN8ZCJgc9AJLKkLhg_H1J09vfoT1FLPOJQ9OYoV_Ol4NsMbVSjiZauEIkctGYETpIMQ8mITdRI_i8Vt1n7OEB4jtkfWYTVQ1HcKdxi19Z3ePKW-fmfoUNLS5rR-piIloIAA
 ```
 ```
-curl -X POST -d https://login.microsoftonline.com/common/oauth2/v2.0/token client_id={bc64b475-659f-4716-88d5-198c267bf3a4}&redirect_uri={https://localhost:53682/}&client_secret={oj.7Q~IgLTBIIsm5_DSutlsCTJ_ju0oJTLVBe} &refresh_token={refresh_token}&grant_type=refresh_token
 
 curl -X POST -H "Content-Type: application/x-www-form-urlencoded" -d 'client_id=bc64b475-659f-4716-88d5-198c267bf3a4&scope=https%3A%2F%2Fgraph.microsoft.com%2F.default&client_secret=oj.7Q~IgLTBIIsm5_DSutlsCTJ_ju0oJTLVBe&grant_type=client_credentials' 'https://login.microsoftonline.com/common/oauth2/v2.0/token'
 
-curl -X GET https://login.microsoftonline.com/common/oauth2/v2.0/authorize?client_id={bc64b475-659f-4716-88d5-198c267bf3a4}&scope=https%3A%2F%2Fgraph.microsoft.com%2F.default&response_type=code&redirect_uri={https://localhost:53682/}
+curl -X POST -H "Content-Type: application/x-www-form-urlencoded" -d 'client_id=bc64b475-659f-4716-88d5-198c267bf3a4&redirect_uri=https://localhost:53682/&client_secret=oj.7Q~IgLTBIIsm5_DSutlsCTJ_ju0oJTLVBe&code=authorization code&grant_type=authorization_code' 'https://login.microsoftonline.com/common/oauth2/v2.0/token'
 
-curl -X POST -H "Content-Type: application/x-www-form-urlencoded" -d 'client_id=bc64b475-659f-4716-88d5-198c267bf3a4&scope=https%3A%2F%2Fgraph.microsoft.com%2F.default&grant_type=code' 'https://login.microsoftonline.com/common/oauth2/v2.0/authorize'
 ```
 
 
