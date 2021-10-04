@@ -1,6 +1,18 @@
 ## GitHub自动续订
 ```
 id
+id=r'bc64b475-659f-4716-88d5-198c267bf3a4'
+密码
+secret=r'oj.7Q~IgLTBIIsm5_DSutlsCTJ_ju0oJTLVBe'
+
+.\rclone authorize "onedrive" "2812ab3f-98db-4c6b-912b-1ca753a9c0b7" "KW3m8ZV-v6xRU.jK_mTdq-~_~S1Dp0L_0-"
+redirect_uri:https://localhost:53682/
+
+
+
+## GitHub自动续订
+```
+id
 id=r'2812ab3f-98db-4c6b-912b-1ca753a9c0b7'
 密码
 secret=r'KW3m8ZV-v6xRU.jK_mTdq-~_~S1Dp0L_0-'
