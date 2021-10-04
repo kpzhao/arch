@@ -14,6 +14,8 @@ curl -X POST -d https://login.microsoftonline.com/common/oauth2/v2.0/token clien
 curl -X POST -H "Content-Type: application/x-www-form-urlencoded" -d 'client_id=bc64b475-659f-4716-88d5-198c267bf3a4&scope=https%3A%2F%2Fgraph.microsoft.com%2F.default&client_secret=oj.7Q~IgLTBIIsm5_DSutlsCTJ_ju0oJTLVBe&grant_type=client_credentials' 'https://login.microsoftonline.com/common/oauth2/v2.0/token'
 
 curl -X GET https://login.microsoftonline.com/common/oauth2/v2.0/authorize?client_id={bc64b475-659f-4716-88d5-198c267bf3a4}&scope=https%3A%2F%2Fgraph.microsoft.com%2F.default&response_type=code&redirect_uri={https://localhost:53682/}
+
+curl -X POST -H "Content-Type: application/x-www-form-urlencoded" -d 'client_id=bc64b475-659f-4716-88d5-198c267bf3a4&scope=https%3A%2F%2Fgraph.microsoft.com%2F.default&grant_type=code' 'https://login.microsoftonline.com/common/oauth2/v2.0/authorize'
 ```
 
 
