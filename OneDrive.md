@@ -10,6 +10,8 @@ redirect_uri:https://localhost:53682/
 ```
 ```
 curl -X POST -d https://login.microsoftonline.com/common/oauth2/v2.0/token client_id={bc64b475-659f-4716-88d5-198c267bf3a4}&redirect_uri={https://localhost:53682/}&client_secret={oj.7Q~IgLTBIIsm5_DSutlsCTJ_ju0oJTLVBe} &refresh_token={refresh_token}&grant_type=refresh_token
+
+curl -X POST -H "Content-Type: application/x-www-form-urlencoded" -d 'client_id=bc64b475-659f-4716-88d5-198c267bf3a4&scope=https%3A%2F%2Fgraph.microsoft.com%2F.default&client_secret=oj.7Q~IgLTBIIsm5_DSutlsCTJ_ju0oJTLVBe&grant_type=client_credentials' 'https://login.microsoftonline.com/common/oauth2/v2.0/token'
 ```
 
 
