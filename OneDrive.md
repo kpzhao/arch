@@ -8,6 +8,9 @@ secret=r'oj.7Q~IgLTBIIsm5_DSutlsCTJ_ju0oJTLVBe'
 .\rclone authorize "onedrive" "2812ab3f-98db-4c6b-912b-1ca753a9c0b7" "KW3m8ZV-v6xRU.jK_mTdq-~_~S1Dp0L_0-"
 redirect_uri:https://localhost:53682/
 ```
+```
+curl -X POST -d https://login.microsoftonline.com/common/oauth2/v2.0/token client_id={bc64b475-659f-4716-88d5-198c267bf3a4}&redirect_uri={https://localhost:53682/}&client_secret={oj.7Q~IgLTBIIsm5_DSutlsCTJ_ju0oJTLVBe} &refresh_token={refresh_token}&grant_type=refresh_token
+```
 
 
 ## GitHub自动续订
