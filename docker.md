@@ -3,11 +3,12 @@
 在一个空白目录中，建立一个文本文件，并命名为 `Dockerfile`： 内容如下  
 ```
 FROM docker.io/archlinux  
-CMD [ "/sbin/init" ]
+RUN pacman -Sy --noconfirm git python python-pip && \
+pacman -Sy
 ```
 构建
 ```
-docker build --format=docker -t arch .
+docker build -t arch .
 ```
 启动
 ```
