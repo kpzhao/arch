@@ -95,7 +95,12 @@ sudo pacman -U genie-systemd-1.44-1-x86_64.pkg.tar.zst
 ```
 运行 genie -i，让ArchWSL可以正常使用systemd
 ```
-genie -i
+genie -s
+```
+问题 [Genie times out due to systemd-sysusers]（https://githubmemory.com/repo/arkane-systems/genie/issues/190?page=2）
+```
+systemctl edit systemd-sysusers.service #去掉LoadCredential=的#
+LoadCredential= #添加一行
 ```
 ## 安装xfce4/kde
 ### xfce4
