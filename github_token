@@ -1,0 +1,10 @@
+git remote remove 老的远程地址链接
+
+//可以使用git remote -v 查看老的github远程地址链接
+
+git remote add origin https://<token>@github.com/<github-name>/repo.git
+
+作者：冲锋陷阵的书生
+链接：https://juejin.cn/post/6998176748525322247
+来源：稀土掘金
+著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。
