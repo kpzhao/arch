@@ -19,7 +19,7 @@ pacman-key --populate
 #启用 multilib 库
 echo -e '[multilib]\nInclude = /etc/pacman.d/mirrorlist' >> /etc/pacman.conf
 #配置ArchLinuxcn清华源
-echo -e '[archlinuxcn]\nServer = Server = https://mirrors.ustc.edu.cn/archlinuxcn/$arch' >> /etc/pacman.conf
+echo -e '[archlinuxcn]\nServer = https://mirrors.ustc.edu.cn/archlinuxcn/$arch' >> /etc/pacman.conf
 pacman -Sy
 pacman -Sq --noconfirm archlinuxcn-keyring
 pacman -Sy
