@@ -13,6 +13,8 @@ esac
 
 #配置清华源
 sed -i -e '1i Server = https://mirrors.ustc.edu.cn/archlinux/$repo/os/$arch' /etc/pacman.d/mirrorlist
+#启用 multilib 库
+echo -e '[multilib]\nInclude = /etc/pacman.d/mirrorlist' >> /etc/pacman.conf
 #配置ArchLinuxcn清华源
 echo -e '[archlinuxcn]\nServer = Server = https://mirrors.ustc.edu.cn/archlinuxcn/$arch' >> /etc/pacman.conf
 pacman -Sy
