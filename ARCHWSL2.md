@@ -65,10 +65,10 @@ sudo sed -i 's/#zh_CN.UTF-8 UTF-8/zh_CN.UTF-8 UTF-8/g' /etc/locale.gen \
 && sudo bash -c 'echo -e "LANG=zh_CN.UTF-8\nLANGUAGE=zh_CN:zh:en_US" > /etc/locale.conf' \
 && sudo locale-gen
 ```
-#Arch自带了man，无需再次安装，仅安装中文语言包
+## Arch自带了man，无需再次安装，仅安装中文语言包
 pacman -Sq --noconfirm man-pages-zh_cn
 
-#配置国内时区
+## 配置国内时区
 ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
 ## 创建用户
 ```
