@@ -37,7 +37,7 @@ Server = https://mirrors.ustc.edu.cn/archlinuxcn/$arch
 ```
 或者
 ```
-echo -e "[archlinuxcn]\nServer = https://mirrors.ustc.edu.cn/archlinuxcn/$arch" >> /etc/pacman.conf
+echo -e '[archlinuxcn]\nServer = https://mirrors.ustc.edu.cn/archlinuxcn/$arch' >> /etc/pacman.conf
 ```
 然后：
 ```
