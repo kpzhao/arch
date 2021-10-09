@@ -21,10 +21,6 @@ multilib 库包含 64 位系统中需要的 32 位软件和库
 [multilib]
 Include = /etc/pacman.d/mirrorlist
 ```
-或者
-```
-sed -i 's/#\[multilib\]\n#Include = \/etc\/pacman.d\/mirrorlist/\[multilib\]\nInclude = \/etc\/pacman.d\/mirrorlist/g' /etc/pacman.conf
-```
 并且取消该文件中`#Color`这一行的注释，以启用彩色输出
 ## 添加 archlinuxcn 源
 Arch Linux 中文社区仓库 是由 Arch Linux 中文社区驱动的非官方用户仓库。
