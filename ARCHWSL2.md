@@ -1,5 +1,6 @@
 ## 安装 ARCHWSL2
 在[yuk7/ArchWSL - releases](https://github.com/yuk7/ArchWSL/releases/tag/21.8.28.0)下载`Arch.zip`，解压，双击`Arch.exe`进行安装。详见[yuk7/ArchWSL - Wiki](https://github.com/yuk7/ArchWSL)
+## 以下在root用户下
 ## 换源更新
 ```
 passwd # 设置密码
@@ -20,6 +21,11 @@ multilib 库包含 64 位系统中需要的 32 位软件和库
 [multilib]
 Include = /etc/pacman.d/mirrorlist
 ```
+或者
+```
+sed -i 's/#[multilib]/[multilib]/g' /etc/pacman.conf
+sed -i 's/#Include = /etc/pacman.d/mirrorlist/Include = /etc/pacman.d/mirrorlist/g' /etc/pacman.conf
+```
 并且取消该文件中`#Color`这一行的注释，以启用彩色输出
 ## 添加 archlinuxcn 源
 Arch Linux 中文社区仓库 是由 Arch Linux 中文社区驱动的非官方用户仓库。
@@ -29,11 +35,41 @@ Arch Linux 中文社区仓库 是由 Arch Linux 中文社区驱动的非官方�
 [archlinuxcn]    
 Server = https://mirrors.ustc.edu.cn/archlinuxcn/$arch  
 ```
+或者
+```
+echo -e "[archlinuxcn]\nServer = https://mirrors.ustc.edu.cn/archlinuxcn/$arch" >> /etc/pacman.conf
+```
 然后：
 ```
 pacman -Syy
 pacman -S archlinuxcn-keyring
 ```
+## 安装中文字体
+```
+sudo pacman -S wqy-microhei
+```
+`sudo vim /etc/locale.gen`，取消下面两行的注释：
+```
+en_US.UTF-8 UTF-8
+zh_CN.UTF-8 UTF-8
+```
+然后`sudo locale-gen`初始化语言环境
+```
+vim /etc/locale.conf  
+第一行设置为 LANG=en_US.UTF-8  
+echo "LANG=en_US.UTF-8" >> /etc/locale.conf
+```
+或者
+```
+sudo sed -i 's/#zh_CN.UTF-8 UTF-8/zh_CN.UTF-8 UTF-8/g' /etc/locale.gen \
+&& sudo bash -c 'echo -e "LANG=zh_CN.UTF-8\nLANGUAGE=zh_CN:zh:en_US" > /etc/locale.conf' \
+&& sudo locale-gen
+```
+#Arch自带了man，无需再次安装，仅安装中文语言包
+pacman -Sq --noconfirm man-pages-zh_cn
+
+#配置国内时区
+ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
 ## 创建用户
 ```
 useradd -m -G wheel -s /bin/bash kpzhao  
@@ -83,6 +119,17 @@ touch ~/.zshrc
 sudo ln -s ~/.zshrc /root/.zshrc
 ```
 ## 使用 proxychains 代理终端程序
+## clash 代理
+```
+export hostip=$(cat /etc/resolv.conf |grep -oP '(?<=nameserver\ ).*')
+export https_proxy="http://${hostip}:7890"
+export http_proxy="http://${hostip}:7890"
+export all_proxy="socks5://${hostip}:7890"
+```
+或者
+```
+echo -e "hostip=$(cat /etc/resolv.conf |grep -oP '(?<=nameserver\ ).*')\nexport https_proxy="http://${hostip}:7890"\nexport http_proxy="http://${hostip}:7890"\nexport all_proxy="socks5://${hostip}:7890"" >> .bashrc
+```
 ## systemd
 安装 daemonize
 ```
@@ -112,29 +159,6 @@ sudo pacman -S --needed xfce4 xfce4-goodies dbus dbus-glib
 pacman -S plasma-meta konsole dolphin #安装plasma-meta元软件包以及终端和文件管理器
 systemctl enable sddm #配置sddm
 ```
-
-## 安装中文字体
-```
-sudo pacman -S wqy-microhei
-```
-`sudo vim /etc/locale.gen`，取消下面两行的注释：
-```
-en_US.UTF-8 UTF-8
-zh_CN.UTF-8 UTF-8
-```
-然后`sudo locale-gen`初始化语言环境
-```
-vim /etc/locale.conf  
-第一行设置为 LANG=en_US.UTF-8  
-echo "LANG=en_US.UTF-8" >> /etc/locale.conf
-```
-或者
-```
-sudo sed -i 's/#zh_CN.UTF-8 UTF-8/zh_CN.UTF-8 UTF-8/g' /etc/locale.gen \
-&& sudo bash -c 'echo -e "LANG=zh_CN.UTF-8\nLANGUAGE=zh_CN:zh:en_US" > /etc/locale.conf' \
-&& sudo locale-gen
-```
-
 ## 安装 tigervnc
 ```
 sudo pacman -Sy tigervnc
@@ -168,15 +192,4 @@ localhostForwarding=true
 
 
 
-## clash 代理
 
-```
-export hostip=$(cat /etc/resolv.conf |grep -oP '(?<=nameserver\ ).*')
-export https_proxy="http://${hostip}:7890"
-export http_proxy="http://${hostip}:7890"
-export all_proxy="socks5://${hostip}:7890"
-```
-或者
-```
-echo -e "hostip=$(cat /etc/resolv.conf |grep -oP '(?<=nameserver\ ).*')\nexport https_proxy="http://${hostip}:7890"\nexport http_proxy="http://${hostip}:7890"\nexport all_proxy="socks5://${hostip}:7890"" >> .bashrc
-```
