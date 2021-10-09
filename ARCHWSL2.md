@@ -23,7 +23,7 @@ Include = /etc/pacman.d/mirrorlist
 ```
 或者
 ```
-sed -i 's/#[multilib]/[multilib]/g' /etc/pacman.conf
+sed -i 's/#\[multilib\]/\[multilib\]/g' /etc/pacman.conf
 sed -i 's/#Include = \/etc\/pacman.d\/mirrorlist/Include = \/etc\/pacman.d\/mirrorlist/g' /etc/pacman.conf
 ```
 并且取消该文件中`#Color`这一行的注释，以启用彩色输出
