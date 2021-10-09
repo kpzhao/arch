@@ -32,6 +32,25 @@ sudo docker  run -d \
     -v /mnt/c/aria2/aria2-downloads:/downloads \
     docker.io/p3terx/aria2-pro
 ```
+```
+docker run -d \
+    --name aria2-pro \
+    --restart unless-stopped \
+    --log-opt max-size=1m \
+    -e PUID=$UID \
+    -e PGID=$GID \
+    -e UMASK_SET=022 \
+    -e RPC_SECRET=<TOKEN> \
+    -e RPC_PORT=6800 \
+    -p 6800:6800 \
+    -e LISTEN_PORT=6888 \
+    -p 6888:6888 \
+    -p 6888:6888/udp \
+    -v /mnt/c/aria2/aria2-config:/config \
+    -v /mnt/c/aria2/aria2-downloads:/downloads \
+    p3terx/aria2-pro
+
+```
 ### 前端
 ```
 sudo docker run -d \
