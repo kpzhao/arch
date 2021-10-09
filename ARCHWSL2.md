@@ -132,7 +132,7 @@ echo "LANG=en_US.UTF-8" >> /etc/locale.conf
 ```
 sudo sed -i 's/#zh_CN.UTF-8 UTF-8/zh_CN.UTF-8 UTF-8/g' /etc/locale.gen \
 && sudo bash -c 'echo -e "LANG=zh_CN.UTF-8\nLANGUAGE=zh_CN:zh:en_US" > /etc/locale.conf' \
-&& locale-gen
+&& sudo locale-gen
 ```
 
 ## 安装 tigervnc
