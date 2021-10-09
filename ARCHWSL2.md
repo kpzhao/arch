@@ -130,7 +130,7 @@ echo "LANG=en_US.UTF-8" >> /etc/locale.conf
 ```
 或者
 ```
-sed -i 's/#zh_CN.UTF-8 UTF-8/zh_CN.UTF-8 UTF-8/g' /etc/locale.gen \
+sudo sed -i 's/#zh_CN.UTF-8 UTF-8/zh_CN.UTF-8 UTF-8/g' /etc/locale.gen \
 && sudo bash -c 'echo -e "LANG=zh_CN.UTF-8\nLANGUAGE=zh_CN:zh:en_US" > /etc/locale.conf' \
 && locale-gen
 ```
@@ -175,4 +175,8 @@ export hostip=$(cat /etc/resolv.conf |grep -oP '(?<=nameserver\ ).*')
 export https_proxy="http://${hostip}:7890"
 export http_proxy="http://${hostip}:7890"
 export all_proxy="socks5://${hostip}:7890"
+```
+或者
+```
+bash -c 'echo -e "export hostip=$(cat /etc/resolv.conf |grep -oP '(?<=nameserver\ ).*')\nexport https_proxy="http://${hostip}:7890"\nexport http_proxy="http://${hostip}:7890"\nexport all_proxy="socks5://${hostip}:7890"
 ```
