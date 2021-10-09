@@ -178,5 +178,5 @@ export all_proxy="socks5://${hostip}:7890"
 ```
 或者
 ```
-bash -c 'echo -e "export hostip=$(cat /etc/resolv.conf |grep -oP '(?<=nameserver\ ).*')\nexport https_proxy="http://${hostip}:7890"\nexport http_proxy="http://${hostip}:7890"\nexport all_proxy="socks5://${hostip}:7890"
+bash -c 'echo -e "export hostip=$(cat /etc/resolv.conf |grep -oP '(?<=nameserver\ ).*')\nexport https_proxy="http://${hostip}:7890"\nexport http_proxy="http://${hostip}:7890"\nexport all_proxy="socks5://${hostip}:7890"" >>.bashrc'
 ```
