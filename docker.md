@@ -37,10 +37,11 @@ docker run -d \
     --name aria2-pro \
     --restart unless-stopped \
     --log-opt max-size=1m \
+    --network host \
     -e PUID=$UID \
     -e PGID=$GID \
     -e UMASK_SET=022 \
-    -e RPC_SECRET=<TOKEN> \
+    -e RPC_SECRET=666999 \
     -e RPC_PORT=6800 \
     -p 6800:6800 \
     -e LISTEN_PORT=6888 \
