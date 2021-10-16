@@ -81,4 +81,9 @@ LightUploader -c xxx.json -t 10 -f "Download" -tgbot "1"
 
 # 将同目录下的 Download 文件夹上传到 OneDrive 网盘根目录中, 使用 15 线程, 并设置分块大小为 20M
 LightUploader -c xxx.json -t 15 -b 20 -f "Download" 
- ```
+```
+
+```
+LightUploader -c kpzhao@kpzhao.onmicrosoft.com.json -f ""
+```
+ 
