@@ -209,7 +209,7 @@ localhostForwarding=true
 ```
 
 ```
-echo -e 'nameserver 8.8.8.8' >> /etc/resolv.conf
+sudo -c "echo -e 'nameserver 8.8.8.8' >> /etc/resolv.conf"
 ```
 ## Tips
 从文件资源管理器`\\wsl$`访问
