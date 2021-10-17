@@ -207,9 +207,9 @@ memory=2GB
 swap=0
 localhostForwarding=true
 ```
-
+添加nameserver
 ```
-sudo -c "echo -e 'nameserver 8.8.8.8' >> /etc/resolv.conf"
+sudo bash -c "echo -e 'nameserver 8.8.8.8' >> /etc/resolv.conf"
 ```
 ## Tips
 从文件资源管理器`\\wsl$`访问
