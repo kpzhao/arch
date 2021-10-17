@@ -92,7 +92,6 @@ LightUploader -c xxx.json -t 15 -b 20 -f "Download"
 ```
 
 ``` 
-pc LightUploader -c /home/kpzhao/kpzhao@kpzhao.onmicrosoft.com.json \
--f "/mnt/c/aria2/"
+LightUploader -c ~/kpzhao@kpzhao.onmicrosoft.com.json -f "/mnt/c/aria2/"
 ```
  
