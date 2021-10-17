@@ -120,6 +120,30 @@ touch ~/.zshrc
 sudo ln -s ~/.zshrc /root/.zshrc
 ```
 ## 使用 proxychains 代理终端程序
+```
+sudo pacman -S --needed proxychains-ng
+```
+需要先`cp -f /etc/proxychains.conf ~/.proxychains.conf`，然后在.bashrc中添加以下内容：
+```
+# 获取windows的ip
+export WIN_IP=`cat /etc/resolv.conf | grep nameserver | awk '{print $2}'`
+# 删除 ~/.proxychains.conf 中 [ProxyList] 所在行到文件末尾的全部内容
+sed -i '/\[ProxyList\]/,$d' ~/.proxychains.conf
+# 往文件末尾添加socks5设置，这个 7890 是我的 qv②ray 的 socks5 端口号，改成你自己的
+echo '[ProxyList]\nsocks5 '${WIN_IP}' 7890' >> ~/.proxychains.conf
+# 设置别名；使用 ~/.proxychains.conf 作为proxychains的配置文件；让proxychains quiet（不输出一大串东西）
+alias pc='proxychains4 -q -f ~/.proxychains.conf'
+# 用来手动开关代理，建议走 http 协议，因为 wget 不支持 socks5
+my_proxy=http://${WIN_IP}:7891
+alias p-on='export all_proxy='${my_proxy}' http_proxy='${my_proxy}' https_proxy='${my_proxy}''
+alias p-off='unset all_proxy http_proxy https_proxy'
+```
+然后
+```
+# 在 yourname 用户中
+sudo ln -s ~/.proxychains.conf /root/.proxychains.conf
+source ~/.bashrc
+```
 ## clash 代理
 ```
 export hostip=$(cat /etc/resolv.conf |grep -oP '(?<=nameserver\ ).*')
