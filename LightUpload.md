@@ -24,10 +24,10 @@ ln -s /usr/local/bin/LightUploader /usr/bin/LightUploader
 ## 初始化配置
 ```
 #国际版，将url换成你上面复制的授权地址，包括http://loaclhost。
-OneDriveUploader -a "url" -l zh-CN
+LightUploader -a "url" -l zh-CN
 
 #个人版(家庭版)，将url换成你上面复制的授权地址，包括http://loaclhost。
-OneDriveUploader -a "url" -v 1 -l zh-CN
+LightUploader -a "url" -v 1 -l zh-CN
 ```
 ## usage
 ```
