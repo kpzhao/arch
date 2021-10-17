@@ -83,8 +83,8 @@ LightUploader -c xxx.json -t 10 -f "Download" -tgbot "1"
 LightUploader -c xxx.json -t 15 -b 20 -f "Download" 
 ```
 
-```
-cd /mnt/c/aria2 
-LightUploader -c /home/kpzhao/kpzhao@kpzhao.onmicrosoft.com.json -f ""
+``` 
+pc LightUploader -c /home/kpzhao/kpzhao@kpzhao.onmicrosoft.com.json \
+-f "/mnt/c/aria2/"
 ```
  
