@@ -11,6 +11,10 @@ pushplus token
 ```
 dae983090e884796a191b3ed146db292
 ```
+tg token
+```
+2053091895:AAE8t09sW--zV_muyfXpf8Euv_6EunzyMLE
+```
 ## git clone
 git remote remove 老的远程地址链接
 
