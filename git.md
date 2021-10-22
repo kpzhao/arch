@@ -15,6 +15,10 @@ tg token
 ```
 2053091895:AAE8t09sW--zV_muyfXpf8Euv_6EunzyMLE
 ```
+ID
+```
+549864937
+```
 ## git clone
 git remote remove 老的远程地址链接
 
