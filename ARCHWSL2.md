@@ -134,7 +134,7 @@ echo -e '[ProxyList]\nsocks5 '${WIN_IP}' 7890' >> ~/.proxychains.conf
 # 设置别名；使用 ~/.proxychains.conf 作为proxychains的配置文件；让proxychains quiet（不输出一大串东西）
 alias pc='proxychains4 -q -f ~/.proxychains.conf'
 # 用来手动开关代理，建议走 http 协议，因为 wget 不支持 socks5
-my_proxy=http://${WIN_IP}:7891
+my_proxy=http://${WIN_IP}:7890
 alias p-on='export all_proxy='${my_proxy}' http_proxy='${my_proxy}' https_proxy='${my_proxy}''
 alias p-off='unset all_proxy http_proxy https_proxy'
 ```
