@@ -7,6 +7,10 @@ docker.hub token
 ```
 f57e5e2d-2b02-4fa1-af34-73a65c2b8a65
 ```
+pushplus token
+```
+dae983090e884796a191b3ed146db292
+```
 ## git clone
 git remote remove 老的远程地址链接
 
