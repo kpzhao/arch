@@ -1,3 +1,7 @@
+安装
+```
+pip install python-telegram-bot --upgrade
+```
 ```
 import telegram
 bot = telegram.Bot(token='2053091895:AAE8t09sW--zV_muyfXpf8Euv_6EunzyMLE')
