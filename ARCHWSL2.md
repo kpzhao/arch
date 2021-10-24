@@ -214,6 +214,10 @@ sudo bash -c "echo -e 'nameserver 119.29.29.29' >> /etc/resolv.conf"
 ## Tips
 从文件资源管理器`\\wsl$`访问
 
+```
+netsh winsock reset
+```
+
 
 
 
