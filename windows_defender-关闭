@@ -2,4 +2,8 @@
 输入regedit进入注册表
 然后依次展开HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\services\mpssvc
 然后找到右侧的strat将默认的2改成4
-其意思是禁用该服务，更改后重启生效。
+其意思是禁用该服务，更改后重启生效
+
+或者
+在pe系统下，把 C:\ProgramData\Microsoft\Windows Defender\Platform\4.18.2103.7-0\
+ MsMpEng.exe和NisSrv.exe 改名
