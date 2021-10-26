@@ -11,5 +11,5 @@ podman run -d \
     -e LISTEN_PORT=6888 \
     -v $PWD/aria2-config:/config \
     -v $PWD/aria2-downloads:/downloads \
-    p3terx/aria2-pro
+    docker.io/p3terx/aria2-pro
 ```
