@@ -1,7 +1,9 @@
+## 创建目录
 ```
 mkdir -p /mnt/c/aria2/aria2-config
 mkdir -p /mnt/c/aria2/aria2-downloads
 ```
+## 后端
 ```
 sudo podman run -d \
     --name aria2-pro \
@@ -17,3 +19,13 @@ sudo podman run -d \
     -v /mnt/c/aria2/aria2-downloads:/downloads \
     docker.io/p3terx/aria2-pro
 ```
+## 前端
+```
+sudo docker run -d \
+    --name ariang \
+    --log-opt max-size=1m \
+    --restart unless-stopped \
+    --network host \
+    p3terx/ariang --port 6880
+```
+访问`127.0.0.1;6880`即可
