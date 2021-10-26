@@ -1,4 +1,8 @@
 ```
+mkdir -p /mnt/c/aria2/aria2-config
+mkdir -p /mnt/c/aria2/aria2-downloads
+```
+```
 sudo podman run -d \
     --name aria2-pro \
     --restart unless-stopped \
