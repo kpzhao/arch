@@ -21,11 +21,11 @@ sudo podman run -d \
 ```
 ## 前端
 ```
-sudo docker run -d \
+sudo podman run -d \
     --name ariang \
     --log-opt max-size=1m \
     --restart unless-stopped \
     --network host \
-    p3terx/ariang --port 6880
+    docker.io/p3terx/ariang --port 6880
 ```
 访问`127.0.0.1;6880`即可
