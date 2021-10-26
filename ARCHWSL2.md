@@ -65,7 +65,9 @@ sudo sed -i 's/#zh_CN.UTF-8 UTF-8/zh_CN.UTF-8 UTF-8/g' /etc/locale.gen \
 pacman -Sq --noconfirm man-pages-zh_cn
 ```
 ## 配置国内时区
+```
 ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
+```
 ## 配置pacman
 ```
 sed -i 's/#Color/Color/g' /etc/pacman.conf #更改pacman为彩色输出
