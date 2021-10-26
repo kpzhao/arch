@@ -9,7 +9,7 @@ podman run -d \
     -e RPC_SECRET=666999 \
     -e RPC_PORT=6800 \
     -e LISTEN_PORT=6888 \
-    -v aria2-config:/config \
-    -v aria2-downloads:/downloads \
+    -v /aria2-config:/config \
+    -v /aria2-downloads:/downloads \
     docker.io/p3terx/aria2-pro
 ```
