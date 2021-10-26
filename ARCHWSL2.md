@@ -171,7 +171,7 @@ sudo pacman -U genie-systemd-1.44-1-x86_64.pkg.tar.zst
 ```
 genie -s
 ```
-问题 [Genie times out due to systemd-sysusers]（https://githubmemory.com/repo/arkane-systems/genie/issues/190?page=2）
+问题 [Genie times out due to systemd-sysusers](https://githubmemory.com/repo/arkane-systems/genie/issues/190?page=2)
 ```
 systemctl edit systemd-sysusers.service #去掉LoadCredential=的#
 LoadCredential= #添加一行
