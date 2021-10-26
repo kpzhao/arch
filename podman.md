@@ -28,4 +28,4 @@ sudo podman run -d \
     --network host \
     docker.io/p3terx/ariang --port 6880
 ```
-访问`127.0.0.1;6880`即可
+访问`127.0.0.1:6880`即可
