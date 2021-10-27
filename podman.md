@@ -33,11 +33,11 @@ sudo podman run -d \
 ```
 sudo podman generate systemd --restart-policy=always -t 1 --name -f aria2-pro
 sudo cp container-aria2-pro.service /etc/systemd/system/
-sudo systemctl enable containerr-aria2-pro
+sudo systemctl enable container-aria2-pro
 
 sudo podman generate systemd --restart-policy=always -t 1 --name -f ariang
 sudo cp container-ariang.service /etc/systemd/system/
-sudo systemctl enable containerr-ariang
+sudo systemctl enable container-ariang
 ```
 
 ## 自启
