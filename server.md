@@ -18,10 +18,11 @@ sudo systemctl start docker
 ```
 ## 安装mysql
 ```
-sudo docker run --name trojan-mariadb --restart=always -p 3306:3306 -v /home/mariadb:/var/lib/mysql -e MYSQL_ROOT_PASSWORD=trojan -e MYSQL_ROOT_HOST=% -e MYSQL_DATABASE=trojan -d mariadb:10.2
+mkdir -p /home/mariadb
+sudo podman run --name trojan-mariadb  -p 3306:3306 -v /home/mariadb:/var/lib/mysql -e MYSQL_ROOT_PASSWORD=trojan -e MYSQL_ROOT_HOST=% -e MYSQL_DATABASE=trojan -d mariadb:10.2
 ```
 ## 安装trojan
 ```
-sudo docker run -it -d --name trojan --net=host --restart=always --privileged jrohy/trojan init
-docker exec -it trojan bash
+sudo podman run -it -d --name trojan --net=host --privileged jrohy/trojan init
+sudo podman exec -it trojan bash
 ```
