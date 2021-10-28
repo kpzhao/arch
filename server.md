@@ -8,13 +8,7 @@ ssh root@43.129.169.167
 ```
 ## centos安装docker
 ```
-sudo yum install -y yum-utils
-sudo yum-config-manager \
-    --add-repo \
-    https://download.docker.com/linux/centos/docker-ce.repo
-sudo yum install docker-ce docker-ce-cli containerd.io
-sudo systemctl enable docker
-sudo systemctl start docker
+sudo dnf install podman
 ```
 ## 安装mysql
 ```
@@ -25,4 +19,13 @@ sudo podman run --name trojan-mariadb  -p 3306:3306 -v /home/mariadb:/var/lib/my
 ```
 sudo podman run -it -d --name trojan --net=host --privileged docker.io/jrohy/trojan init
 sudo podman exec -it trojan bash
+```
+## 自启
+```
+podman generate systemd --restart-policy=always -t 1 --name -f trojan-mariadb
+podman generate systemd --restart-policy=always -t 1 --name -f trojan
+sudo cp container-trojan-mariadb.service /etc/systemd/system/
+sudo cp container-trojan.service /etc/systemd/system/
+sudo systemctl enable container-trojan-mariadb
+sudo systemctl enable container-trojan
 ```
