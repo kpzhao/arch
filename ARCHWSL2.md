@@ -173,10 +173,14 @@ sudo pacman -U genie-systemd-1.44-1-x86_64.pkg.tar.zst
 ```
 genie -s
 ```
-问题 [Genie times out due to systemd-sysusers](https://github.com/arkane-systems/genie/issues/190#issuecomment-898022078)
+问题 [Genie times out due to systemd-sysusers](https://github.com/arkane-systems/genie/wiki/Systemd-units-known-to-be-problematic-under-WSL#systemd-sysusersservice)
 ```
-systemctl edit systemd-sysusers.service #去掉LoadCredential=的#
-LoadCredential= #添加一行
+vim /usr/lib/systemd/system/systemd-sysusers.service
+```
+添加
+```
+[Service]
+LoadCredential=
 ```
 ## 安装xfce4/kde
 ### xfce4
