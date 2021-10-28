@@ -22,8 +22,8 @@ sudo podman exec -it trojan bash
 ```
 ## 自启
 ```
-podman generate systemd --restart-policy=always -t 1 --name -f trojan-mariadb
-podman generate systemd --restart-policy=always -t 1 --name -f trojan
+sudo podman generate systemd --restart-policy=always -t 1 --name -f trojan-mariadb
+sudo podman generate systemd --restart-policy=always -t 1 --name -f trojan
 sudo cp container-trojan-mariadb.service /etc/systemd/system/
 sudo cp container-trojan.service /etc/systemd/system/
 sudo systemctl enable container-trojan-mariadb
