@@ -18,5 +18,15 @@ server {
     }
 ```
 ```
-sudo docker run --name mynginx -d -p 9000:9000 -v /home/kpzhao/mynginx.conf:/etc/nginx/nginx.conf -v /home/kpzhao:/root nginx
+sudo docker run --name mynginx -d --network host -v /home/kpzhao/mynginx.conf:/etc/nginx/nginx.conf -v /home/kpzhao:/root nginx
+```
+```
+sudo docker run -d --name=mynginx --restart=always \
+    --network host \
+    -v ~/nginx/conf/nginx.conf:/etc/nginx/nginx.conf \
+    -v ~/nginx/vhost:/etc/nginx/conf.d/vhost \
+    -v ~/nginx/ssl:/etc/nginx/ssl \
+    -v ~/nginx/html:/usr/share/nginx/html \
+    -v /home/kpzhao:/root \
+    nginx
 ```
