@@ -105,6 +105,15 @@ sudo pacman -S --needed yay
 ```
 yay --aururl "https://aur.tuna.tsinghua.edu.cn" --save
 ````
+### 安装aur包
+```
+curl -lO https://aur.archlinux.org/cgit/aur.git/snapshot/dotnet-core-5.0-bin.tar.gz
+1➜ tar -zxvf dotnet-core-5.0-bin.tar.gz
+2➜ cd tar -zxvf dotnet-core-5.0-bin
+3➜ makepkg -s
+4➜ pacman -U dotnet-core-5.0-bin.pkg.tar.xz
+装完之后为了防止下次pacman -Syu时不小心又升级到最新版，可以在/etc/pacman.conf里的IgnorePkg 加上刚刚安装的包
+```
 ## 安装其他的一些软件
 ```
 sudo pacman -S --needed neofetch lolcat bat tokei tree screenfetch
