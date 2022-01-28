@@ -1,0 +1,4 @@
+## 设置su密码
+```
+sudo passwd root
+```
