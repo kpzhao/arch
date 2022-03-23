@@ -197,8 +197,13 @@ LoadCredential=
 sudo pacman -S --needed xfce4 xfce4-goodies dbus dbus-glib
 ```
 ### kde
+### wayland 
 ```
-pacman -S plasma-meta konsole dolphin #安装plasma-meta元软件包以及终端和文件管理器
+sudo pacman -Sy wayland sway
+
+```
+```
+pacman -S plasma-meta plasma-wayland-session konsole dolphin #安装plasma-meta元软件包以及终端和文件管理器
 systemctl enable sddm #配置sddm
 ```
 ## 安装 tigervnc
