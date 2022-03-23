@@ -211,10 +211,11 @@ systemctl enable sddm #配置sddm
 sudo pacman -Sy tigervnc
 vncpasswd #设置密码
 vim /etc/tigervnc/vncserver.users #添加用户
+:1=root
 ```
 新建`vim ~/.vnc/config`，内容为
 ```
-session=xfce4 #或者换成kde
+session=plasma
 geometry=2736x1824
 localhost
 alwaysshared
