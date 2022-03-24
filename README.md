@@ -3,6 +3,12 @@
 ### 123
 #### 123
 ##### 123
+## chroot
+```
+mount /dev/sdx/mnt
+arch-chroot /mnt
+umount -R /mnt
+```
 ## 网络
 ```
 dhcpcd iwd
