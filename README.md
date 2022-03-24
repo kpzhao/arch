@@ -13,9 +13,11 @@ umount -R /mnt
 ```
 dhcpcd iwd
 ```
+```
 sudo systemctl start dhcpcd
 sudo systemctl start iwd
 iwctl
+```
 ## 换源
 编辑 `/etc/pacman.d/mirrorlist` ，在文件的最顶端添加  
 ```
